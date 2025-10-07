@@ -1,0 +1,149 @@
+---
+const services = [
+  {
+    title: "Micropigmentare Buze",
+    subtitle: "Prima Ședință",
+    description: "Buze pline, conturate și colorate natural. Rezultat ce durează ani de zile fără retușuri frecvente.",
+    price: "1300 lei",
+    features: ["Culoare naturală", "Contur perfect", "Hidratare vizibilă", "Include retuș"],
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>`,
+    gradient: "from-rose-500 to-pink-500"
+  },
+  {
+    title: "Micropigmentare Sprâncene",
+    subtitle: "Tehnica Pudrat",
+    description: "Sprâncene naturale și uniforme cu aspect pudrat. Ideal pentru orice tip de piele și orice vârstă.",
+    price: "1200 lei",
+    features: ["Aspect natural", "Durată 1-3 ani", "Fără durere", "Include retuș"],
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>`,
+    gradient: "from-purple-500 to-pink-500"
+  },
+  {
+    title: "Micropigmentare Sprâncene",
+    subtitle: "Tehnica Fir cu Fir",
+    description: "Fire desenate manual pentru un look ultra-natural. Perfectă pentru sprâncene rare sau asimetrice.",
+    price: "1300 lei",
+    features: ["Hiper-realist", "Fire naturale", "Fără durere", "Include retuș"],
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>`,
+    gradient: "from-blue-500 to-cyan-500"
+  },
+  {
+    title: "Îndepărtare Laser Tatuaj",
+    subtitle: "Sprâncene Vechi",
+    description: "Șterge tatuajele vechi și nedorite de la sprâncene cu tehnologie laser de ultimă generație.",
+    price: "300 lei",
+    features: ["Fără cicatrice", "Sigur și rapid", "Tehnologie modernă", "Rezultate garantate"],
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
+    gradient: "from-amber-500 to-orange-500"
+  }
+];
+---
+
+<section id="servicii" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Servicii Oferite</span>
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
+        Transformă-ți Privirea cu
+        <span class="text-primary-600">Micropigmentare Profesională</span>
+      </h2>
+      <p class="text-lg text-gray-600">
+        Descoperă gama completă de servicii de micropigmentare și îndepărtare laser, realizate cu tehnologii moderne și produse premium.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      {services.map((service, index) => (
+        <div class="group relative bg-white rounded-2xl border-2 border-gray-100 hover:border-primary-200 transition-all duration-300 hover:shadow-2xl overflow-hidden">
+          <!-- Gradient Background -->
+          <div class={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+
+          <div class="relative p-8">
+            <!-- Icon -->
+            <div class={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.gradient} text-white mb-6 shadow-lg`}>
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <Fragment set:html={service.icon} />
+              </svg>
+            </div>
+
+            <!-- Content -->
+            <div class="mb-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-1">{service.title}</h3>
+              <p class="text-primary-600 font-semibold">{service.subtitle}</p>
+            </div>
+
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              {service.description}
+            </p>
+
+            <!-- Features -->
+            <ul class="space-y-3 mb-6">
+              {service.features.map(feature => (
+                <li class="flex items-center gap-3">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <!-- Price & CTA -->
+            <div class="flex items-center justify-between pt-6 border-t border-gray-100">
+              <div>
+                <div class="text-sm text-gray-500">Preț de la</div>
+                <div class="text-3xl font-bold text-gray-900">{service.price}</div>
+              </div>
+              <a
+                href="https://api.whatsapp.com/send/?phone=40732163268&text=Buna%20ziua,%20as%20dori%20informatii%20despre%20{service.title}&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${service.gradient} text-white rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-md hover:shadow-xl`}
+              >
+                Rezervă
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Additional Services -->
+    <div class="mt-12 max-w-4xl mx-auto">
+      <div class="bg-gradient-to-r from-primary-50 to-pink-50 rounded-2xl p-8 border border-primary-100">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Servicii Suplimentare</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md">
+              <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-1">Retuș (maxim 8 săptămâni)</h4>
+              <p class="text-gray-600 text-sm mb-2">Perfecționează rezultatele după prima procedură</p>
+              <p class="text-xl font-bold text-primary-600">300 lei</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md">
+              <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-1">Întreținere (maxim 1-3 ani)</h4>
+              <p class="text-gray-600 text-sm mb-2">Menține culoarea și forma perfectă</p>
+              <p class="text-xl font-bold text-primary-600">1000 lei</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

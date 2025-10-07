@@ -1,0 +1,23 @@
+{
+  "name": "sleepy-star",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "fetch-reviews": "node scripts/fetch-google-reviews.js"
+  },
+  "dependencies": {
+    "astro": "^5.14.1"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "@playwright/test": "^1.56.0",
+    "flowbite": "^3.1.2",
+    "flowbite-typography": "^1.0.5",
+    "playwright": "^1.56.0",
+    "tailwindcss": "^3.4.18"
+  }
+}
