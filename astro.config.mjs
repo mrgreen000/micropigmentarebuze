@@ -8,7 +8,6 @@ export default defineConfig({
   server: {
     port: 6200
   },
-  // Uncomment and update the following for GitHub Pages deployment:
-  // site: 'https://yourusername.github.io',
-  // base: '/your-repo-name',
+  site: 'https://mrgreen000.github.io',
+  base: '/micropigmentarebuze',
 });
