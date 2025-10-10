@@ -19,7 +19,7 @@
 ## ABOUT BUSINESS
 - site url: www.micropigmentarebuze.ro
 - NAME: Paula Lupu
-- experience: since 2016
+- experience: since 2017
 - address: Ploiesti, Prahova str. Ana Ipatescu nr 10
 - google local business: https://share.google/R4hMYV1vdFZIm4uh8
 - wwww: micropigmentaresprancene.ro

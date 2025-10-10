@@ -25,6 +25,10 @@ import sprancene7 from '../assets/micropigmentareSprancene/micropigmentareSpranc
 import sprancene8 from '../assets/micropigmentareSprancene/micropigmentareSprancene8.jpeg';
 import sprancene9 from '../assets/micropigmentareSprancene/micropigmentareSprancene9.jpeg';
 
+import laser1 from '../assets/indepartareTatuajLaser/IndepartareTatuajLaser1.jpeg';
+import laser2 from '../assets/indepartareTatuajLaser/IndepartareTatuajLaser2.jpeg';
+import laser3 from '../assets/indepartareTatuajLaser/IndepartareTatuajLaser3.jpeg';
+
 const galleryItems = [
   { id: 1, category: "buze", image: buze1_1, alt: "Micropigmentare Buze - Înainte și După 1" },
   { id: 2, category: "buze", image: buze1_2, alt: "Micropigmentare Buze - Înainte și După 2" },
@@ -50,10 +54,13 @@ const galleryItems = [
   { id: 22, category: "sprancene", image: sprancene7, alt: "Micropigmentare Sprâncene - Înainte și După 11" },
   { id: 23, category: "sprancene", image: sprancene8, alt: "Micropigmentare Sprâncene - Înainte și După 12" },
   { id: 24, category: "sprancene", image: sprancene9, alt: "Micropigmentare Sprâncene - Înainte și După 13" },
+  { id: 25, category: "laser", image: laser1, alt: "Îndepărtare Laser Tatuaj - Înainte și După 1" },
+  { id: 26, category: "laser", image: laser2, alt: "Îndepărtare Laser Tatuaj - Înainte și După 2" },
+  { id: 27, category: "laser", image: laser3, alt: "Îndepărtare Laser Tatuaj - Înainte și După 3" },
 ];
 ---
 
-<section id="galerie" class="py-20 bg-white">
+<section id="lucrari" class="py-20 bg-white">
   <div class="container mx-auto px-4">
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
@@ -86,6 +93,12 @@ const galleryItems = [
         class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200"
       >
         Sprâncene
+      </button>
+      <button
+        data-filter="laser"
+        class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200"
+      >
+        Îndepărtare Laser
       </button>
     </div>
 
@@ -121,7 +134,9 @@ const galleryItems = [
           <!-- Overlay -->
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-              <h3 class="text-xl font-bold capitalize">Micropigmentare {item.category}</h3>
+              <h3 class="text-xl font-bold capitalize">
+                {item.category === 'laser' ? 'Îndepărtare Laser' : `Micropigmentare ${item.category}`}
+              </h3>
             </div>
           </div>
 

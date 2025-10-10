@@ -1,0 +1,186 @@
+---
+---
+
+<div id="cookie-consent" class="fixed bottom-0 left-0 right-0 bg-gray-900 bg-opacity-95 backdrop-blur-sm z-50 transform translate-y-0 transition-all duration-300 hidden border-t border-gray-700">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      <!-- Text -->
+      <div class="flex-1">
+        <p class="text-white text-sm">
+          Folosim cookie-uri pentru analiză și îmbunătățirea experienței tale.
+          <a href="#" id="cookie-details-link" class="text-primary-400 hover:text-primary-300 underline ml-1">Detalii</a>
+        </p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex gap-2 flex-shrink-0">
+        <button
+          id="cookie-reject"
+          class="px-4 py-2 bg-gray-700 text-white rounded-lg text-sm font-medium hover:bg-gray-600 transition-all duration-300"
+        >
+          Refuz
+        </button>
+        <button
+          id="cookie-accept"
+          class="px-4 py-2 bg-primary-600 text-white rounded-lg text-sm font-medium hover:bg-primary-700 transition-all duration-300"
+        >
+          Accept
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Details Modal -->
+<div id="cookie-details-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl">
+    <div class="p-6 md:p-8">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-900">Despre Cookie-uri</h2>
+        <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Necessary Cookies -->
+        <div class="border-b border-gray-200 pb-6">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-gray-900">Cookie-uri Necesare</h3>
+            <span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold">Întotdeauna Active</span>
+          </div>
+          <p class="text-gray-600 text-sm">
+            Aceste cookie-uri sunt esențiale pentru funcționarea site-ului și nu pot fi dezactivate. Ele stochează preferințele tale privind cookie-urile și nu colectează informații personale.
+          </p>
+        </div>
+
+        <!-- Analytics Cookies -->
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="font-bold text-gray-900 mb-3">Cookie-uri de Analiză</h3>
+          <p class="text-gray-600 text-sm mb-3">
+            Ne ajută să înțelegem cum folosești site-ul nostru, ce pagini vizitezi și cum putem îmbunătăți experiența ta. Folosim Google Analytics pentru aceste statistici.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Google Analytics - Analiză trafic și comportament utilizatori</li>
+            <li>• Durată: Până la 2 ani</li>
+          </ul>
+        </div>
+
+        <!-- Marketing Cookies -->
+        <div class="pb-2">
+          <h3 class="font-bold text-gray-900 mb-3">Cookie-uri de Marketing</h3>
+          <p class="text-gray-600 text-sm mb-3">
+            Aceste cookie-uri sunt folosite pentru a-ți afișa reclame relevante pe alte platforme (Facebook, Instagram). Ne ajută să măsurăm eficiența campaniilor noastre publicitare.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Facebook Pixel - Remarketing și publicitate țintită</li>
+            <li>• Durată: Până la 90 zile</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <button
+          id="modal-reject"
+          class="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300"
+        >
+          Doar Necesare
+        </button>
+        <button
+          id="modal-accept"
+          class="flex-1 px-6 py-3 bg-gradient-to-r from-primary-600 to-pink-600 text-white rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
+        >
+          Accept Toate
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Check if user has already made a choice
+  const cookieConsent = localStorage.getItem('cookieConsent');
+  const consentBanner = document.getElementById('cookie-consent');
+  const detailsModal = document.getElementById('cookie-details-modal');
+
+  if (!cookieConsent && consentBanner) {
+    consentBanner.classList.remove('hidden');
+  }
+
+  // Handle Accept
+  function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    if (consentBanner) consentBanner.classList.add('hidden');
+    if (detailsModal) detailsModal.classList.add('hidden');
+    loadTrackingScripts();
+  }
+
+  // Handle Reject (only necessary)
+  function rejectCookies() {
+    localStorage.setItem('cookieConsent', 'rejected');
+    if (consentBanner) consentBanner.classList.add('hidden');
+    if (detailsModal) detailsModal.classList.add('hidden');
+  }
+
+  // Load tracking scripts if consent given
+  function loadTrackingScripts() {
+    // This will be called when you add Google Analytics and Facebook Pixel
+    console.log('✅ User accepted cookies - ready to load tracking scripts');
+
+    // Example for Google Analytics (you'll add your tracking ID):
+    // window.dataLayer = window.dataLayer || [];
+    // function gtag(){dataLayer.push(arguments);}
+    // gtag('js', new Date());
+    // gtag('config', 'YOUR-GA-ID');
+
+    // Example for Facebook Pixel (you'll add your pixel ID):
+    // !function(f,b,e,v,n,t,s){...}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    // fbq('init', 'YOUR-PIXEL-ID');
+    // fbq('track', 'PageView');
+  }
+
+  // If previously accepted, load scripts
+  if (cookieConsent === 'accepted') {
+    loadTrackingScripts();
+  }
+
+  // Event listeners
+  document.getElementById('cookie-accept')?.addEventListener('click', acceptCookies);
+  document.getElementById('cookie-reject')?.addEventListener('click', rejectCookies);
+  document.getElementById('modal-accept')?.addEventListener('click', acceptCookies);
+  document.getElementById('modal-reject')?.addEventListener('click', rejectCookies);
+
+  // Details modal
+  document.getElementById('cookie-details-link')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (detailsModal) detailsModal.classList.remove('hidden');
+  });
+
+  document.getElementById('close-modal')?.addEventListener('click', () => {
+    if (detailsModal) detailsModal.classList.add('hidden');
+  });
+
+  // Close modal on backdrop click
+  detailsModal?.addEventListener('click', (e) => {
+    if (e.target === detailsModal) {
+      detailsModal.classList.add('hidden');
+    }
+  });
+</script>
+
+<style>
+  #cookie-consent {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+</style>

@@ -8,5 +8,5 @@ export default defineConfig({
   server: {
     port: 6200
   },
-  site: 'https://micropigmentarebuze.vercel.app',
+  site: 'https://www.micropigmentarebuze.ro',
 });

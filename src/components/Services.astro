@@ -29,8 +29,8 @@ const additionalServices = servicesData.additionalServices.map(service => ({
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Servicii Oferite</span>
       <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
-        Transformă-ți Privirea cu
-        <span class="text-primary-600">Micropigmentare Profesională</span>
+        Micropigmentare buze
+        <span class="text-primary-600">culoare, volum și perfecțiune naturală</span>
       </h2>
       <p class="text-lg text-gray-600">
         Descoperă gama completă de servicii de micropigmentare și îndepărtare laser, realizate cu tehnologii moderne și produse premium.
@@ -40,39 +40,40 @@ const additionalServices = servicesData.additionalServices.map(service => ({
     <!-- Services Grid -->
     <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
       {services.map((service, index) => (
-        <div class="group relative bg-white rounded-2xl border-2 border-gray-100 hover:border-primary-200 transition-all duration-300 hover:shadow-2xl overflow-hidden">
+        <div class="group relative bg-white rounded-2xl border-2 border-gray-100 hover:border-primary-200 transition-all duration-300 hover:shadow-2xl overflow-hidden flex flex-col">
           <!-- Gradient Background -->
           <div class={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
 
-          <div class="relative p-8">
+          <div class="relative p-8 flex flex-col flex-grow">
             <!-- Icon -->
-            <div class={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.gradient} text-white mb-6 shadow-lg`}>
-              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <Fragment set:html={service.icon} />
+            <div class={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.gradient} text-white mb-6 shadow-lg self-start`}>
+              <svg class="w-8 h-8 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={service.icon}>
               </svg>
             </div>
 
             <!-- Content -->
-            <div class="mb-6">
-              <h3 class="text-2xl font-bold text-gray-900 mb-1">{service.title}</h3>
-              <p class="text-primary-600 font-semibold">{service.subtitle}</p>
+            <div class="flex-grow">
+              <div class="mb-6">
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">{service.title}</h3>
+                <p class="text-primary-600 font-semibold">{service.subtitle}</p>
+              </div>
+
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                {service.description}
+              </p>
+
+              <!-- Features -->
+              <ul class="space-y-3 mb-6">
+                {service.features.map(feature => (
+                  <li class="flex items-center gap-3">
+                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              {service.description}
-            </p>
-
-            <!-- Features -->
-            <ul class="space-y-3 mb-6">
-              {service.features.map(feature => (
-                <li class="flex items-center gap-3">
-                  <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  <span class="text-gray-700">{feature}</span>
-                </li>
-              ))}
-            </ul>
 
             <!-- Price & CTA -->
             <div class="flex items-center justify-between pt-6 border-t border-gray-100">
@@ -91,7 +92,7 @@ const additionalServices = servicesData.additionalServices.map(service => ({
                 )}
               </div>
               <a
-                href="https://api.whatsapp.com/send/?phone=40732163268&text=Buna%20ziua,%20as%20dori%20informatii%20despre%20{service.title}&type=phone_number&app_absent=0"
+                href={`https://api.whatsapp.com/send/?phone=40732163268&text=Buna%20ziua,%20v-am%20contactat%20de%20pe%20www.micropigmentarebuze.ro.%20As%20dori%20informatii%20despre%20${encodeURIComponent(service.title)}.&type=phone_number&app_absent=0`}
                 target="_blank"
                 rel="noopener noreferrer"
                 class={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${service.gradient} text-white rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-md hover:shadow-xl`}
@@ -115,8 +116,7 @@ const additionalServices = servicesData.additionalServices.map(service => ({
           {additionalServices.map(service => (
             <div class="flex items-start gap-4">
               <div class="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md">
-                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <Fragment set:html={service.icon} />
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={service.icon}>
                 </svg>
               </div>
               <div>

@@ -4,6 +4,17 @@ export default {
     './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
     './node_modules/flowbite/**/*.js'
   ],
+  safelist: [
+    'from-rose-500',
+    'to-pink-500',
+    'from-purple-500',
+    'from-blue-500',
+    'to-cyan-500',
+    'from-amber-500',
+    'to-orange-500',
+    'bg-gradient-to-br',
+    'bg-gradient-to-r'
+  ],
   theme: {
     extend: {
       colors: {
