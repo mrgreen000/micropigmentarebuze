@@ -8,6 +8,5 @@ export default defineConfig({
   server: {
     port: 6200
   },
-  site: 'https://mrgreen000.github.io',
-  base: '/micropigmentarebuze',
+  site: 'https://micropigmentarebuze.vercel.app',
 });
