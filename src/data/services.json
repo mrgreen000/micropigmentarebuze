@@ -1,0 +1,91 @@
+{
+  "discount": {
+    "enabled": true,
+    "percentage": 20,
+    "description": "Reducere specială"
+  },
+  "services": [
+    {
+      "id": "micropigmentare-buze",
+      "title": "Micropigmentare Buze",
+      "subtitle": "Prima Ședință",
+      "description": "Buze pline, conturate și colorate natural. Rezultat ce durează ani de zile fără retușuri frecvente.",
+      "originalPrice": 1625,
+      "currency": "lei",
+      "features": [
+        "Culoare naturală",
+        "Contur perfect",
+        "Hidratare vizibilă",
+        "Include retuș"
+      ],
+      "icon": "<path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\"/>",
+      "gradient": "from-rose-500 to-pink-500"
+    },
+    {
+      "id": "micropigmentare-sprancene-pudrat",
+      "title": "Micropigmentare Sprâncene",
+      "subtitle": "Tehnica Pudrat",
+      "description": "Sprâncene naturale și uniforme cu aspect pudrat. Ideal pentru orice tip de piele și orice vârstă.",
+      "originalPrice": 1500,
+      "currency": "lei",
+      "features": [
+        "Aspect natural",
+        "Durată 1-3 ani",
+        "Fără durere",
+        "Include retuș"
+      ],
+      "icon": "<path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 12a3 3 0 11-6 0 3 3 0 016 0z\"/><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z\"/>",
+      "gradient": "from-purple-500 to-pink-500"
+    },
+    {
+      "id": "micropigmentare-sprancene-fir-cu-fir",
+      "title": "Micropigmentare Sprâncene",
+      "subtitle": "Tehnica Fir cu Fir",
+      "description": "Fire desenate manual pentru un look ultra-natural. Perfectă pentru sprâncene rare sau asimetrice.",
+      "originalPrice": 1625,
+      "currency": "lei",
+      "features": [
+        "Hiper-realist",
+        "Fire naturale",
+        "Fără durere",
+        "Include retuș"
+      ],
+      "icon": "<path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01\"/>",
+      "gradient": "from-blue-500 to-cyan-500"
+    },
+    {
+      "id": "indepartare-laser-tatuaj",
+      "title": "Îndepărtare Laser Tatuaj",
+      "subtitle": "Sprâncene Vechi",
+      "description": "Șterge tatuajele vechi și nedorite de la sprâncene cu tehnologie laser de ultimă generație.",
+      "originalPrice": 375,
+      "currency": "lei",
+      "features": [
+        "Fără cicatrice",
+        "Sigur și rapid",
+        "Tehnologie modernă",
+        "Rezultate garantate"
+      ],
+      "icon": "<path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 10V3L4 14h7v7l9-11h-7z\"/>",
+      "gradient": "from-amber-500 to-orange-500"
+    }
+  ],
+  "additionalServices": [
+    {
+      "id": "retus",
+      "title": "Retuș (maxim 8 săptămâni)",
+      "description": "Perfecționează rezultatele după prima procedură",
+      "originalPrice": 375,
+      "currency": "lei",
+      "icon": "<path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15\"/>"
+    },
+    {
+      "id": "intretinere",
+      "title": "Întreținere (maxim 1-3 ani)",
+      "description": "Menține culoarea și forma perfectă",
+      "originalPrice": 1250,
+      "currency": "lei",
+      "icon": "<path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\"/>"
+    }
+  ]
+}
